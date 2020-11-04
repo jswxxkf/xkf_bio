@@ -1,32 +1,98 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <top-indicator bgc="blue" :width-ratio="topIndRatio"/>
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
   </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+  import TopIndicator from "./views/TopIndicator";
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  export default {
+    name: 'app',
+    components: {
+      TopIndicator
+    },
+    data() {
+      return {
+        topIndRatio: 0.0
+      }
+    },
+    mounted() {
+      this.bind();
+    },
+    methods: {
+      bind() {
+        window.onscroll = () => {
+          this.topIndRatio = (window.scrollY || window.pageYOffset) / document.body.scrollHeight * 100;
+          console.log(this.topIndRatio)
+        };
+      }
     }
   }
-}
+</script>
+
+<style scoped lang="less">
+  @import "assets/css/reset.css";
+
+  ul {
+    margin-top: 0.026rem;
+  }
+
+  ul li {
+    height: 0.2604rem;
+    background-color: #cccccc;
+    border-bottom: 0.0104rem solid #000000;
+  }
 </style>

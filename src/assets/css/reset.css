@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 192px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input,
+button {
+  outline: none;
+}
+
+.clear-fix::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+.clear-fix {
+  zoom: 1
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
