@@ -1,68 +1,22 @@
 <template>
   <div id="app">
     <top-indicator bgc="blue" :width-ratio="topIndRatio"/>
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
+    <aside-nav />
+    <articles />
   </div>
 </template>
 
 <script>
   import TopIndicator from "./views/TopIndicator";
+  import AsideNav from "./views/AsideNav";
+  import Articles from "./views/Articles";
 
   export default {
     name: 'app',
     components: {
-      TopIndicator
+      TopIndicator,
+      AsideNav,
+      Articles
     },
     data() {
       return {
@@ -75,8 +29,10 @@
     methods: {
       bind() {
         window.onscroll = () => {
-          this.topIndRatio = (window.scrollY || window.pageYOffset) / document.body.scrollHeight * 100;
-          console.log(this.topIndRatio)
+          this.topIndRatio = (window.scrollY || window.pageYOffset) / (document.body.scrollHeight - window.innerHeight) * 100;
+          if (this.topIndRatio > 100.0) {
+            this.topIndRatio = 100.0
+          }
         };
       }
     }
@@ -85,14 +41,4 @@
 
 <style scoped lang="less">
   @import "assets/css/reset.css";
-
-  ul {
-    margin-top: 0.026rem;
-  }
-
-  ul li {
-    height: 0.2604rem;
-    background-color: #cccccc;
-    border-bottom: 0.0104rem solid #000000;
-  }
 </style>

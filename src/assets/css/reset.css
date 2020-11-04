@@ -6,10 +6,6 @@
   box-sizing: border-box;
 }
 
-html {
-  font-size: 192px;
-}
-
 a {
   text-decoration: none;
 }
@@ -42,4 +38,10 @@ button {
 
 .fr {
   float: right;
+}
+
+body {
+  background-image: url('../../../public/img/bd-bg.jpg') ;
+  background-size: 100%;
+  background-attachment: fixed;
 }
