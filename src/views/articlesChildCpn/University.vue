@@ -1,5 +1,5 @@
 <template>
-  <div class="njitt">
+  <div class="university">
     <div class="name">
       <slot name="schName"></slot>
     </div>
@@ -19,8 +19,9 @@
 </script>
 
 <style scoped>
-  .njitt {
+  .university {
     margin-top: 0.1875rem;
+    margin-bottom: 0.1875rem;
   }
 
   .name {

@@ -3,6 +3,7 @@
     <top-indicator bgc="blue" :width-ratio="topIndRatio"/>
     <aside-nav />
     <articles />
+    <my-footer />
   </div>
 </template>
 
@@ -10,13 +11,15 @@
   import TopIndicator from "./views/TopIndicator";
   import AsideNav from "./views/AsideNav";
   import Articles from "./views/Articles";
+  import MyFooter from "./views/MyFooter";
 
   export default {
     name: 'app',
     components: {
       TopIndicator,
       AsideNav,
-      Articles
+      Articles,
+      MyFooter
     },
     data() {
       return {

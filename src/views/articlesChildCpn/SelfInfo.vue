@@ -35,7 +35,6 @@
 
   .intro a {
     font-weight: 700;
-    color: #ff5c7c;
   }
 
   .photo {
